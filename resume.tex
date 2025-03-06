@@ -1,146 +1,252 @@
-%% Andrew Seif Resume
-\documentclass[a4paper,10pt]{article}
-\usepackage{geometry}
-\geometry{margin=1in}
-\usepackage{enumitem, hyperref, graphicx}
-\hypersetup{colorlinks=true, urlcolor=blue}
-\usepackage{titlesec}
-\titleformat{\section}{\large\bfseries}{}{0em}{}
+\documentclass{resume} % Use the custom resume.cls style
+
+\name{Andrew Seif} % Your name
+
+% \JobTitle{Software Engineer | DevSecOps Engineer | Distributed Systems Engineer | SRE} % Bold Job Title, use 2 only (and use either this or the below one)
+\job{Software Engineer \\ Distributed Systems Engineer \\ SRE} % Your Job, can use up to 3
+
+\address{+(20) 1228474695 \\ \href{mailto:Andrew.Seif@outlook.com}{Andrew.Seif@outlook.com} \\ Cairo, Egypt} %SE
+\address{\href{https://linkedin.com/in/andrew-seif}{linkedin.com/in/andrew-seif} \\ \href{https://github.com/AndrewSeif}{github.com/AndrewSeif}}
+
 \begin{document}
 
-\begin{center}
-    {\LARGE \textbf{Andrew Seif}}\\
-    \textit{Software Engineer | DevSecOps Engineer | Distributed Systems Engineer | SRE}\\
-    \href{mailto:Andrew.Seif@outlook.com}{Andrew.Seif@outlook.com} | +(20) 1228474695
-\end{center}
+% In large resume's it is better to separate sections into independant files with .tex extension as follows:
+% \input{Template.tex} % Where "Template" is the name of file you chose.
 
-\section*{Summary}
-I am a Software Engineer with 9+ years of experience spanning software development, DevOps, distributed systems, and security. I have worked with large enterprises and startups across multiple geographies. My expertise includes developing high-performance distributed applications, REST APIs, system design, automation, observability, and cloud-native development with Spring Boot and Kubernetes.
+%----------------------------------------------------------------------------------------
+%	Profile Picture
+%----------------------------------------------------------------------------------------
+% Must be adjusted for each picture, make your profile picture background free
+% Adjust numbers in dimexpr, scale or even image file name instead of img
+% \begin{textblock*}{\paperwidth}(\dimexpr7in+0.13in,0.3in) % to right: (0.4in,0.3in)
+%     \noindent\includegraphics[scale=0.35]{omar-shawky.png}
+% \end{textblock*}
 
-\section*{Experience}
-\textbf{Jendi AI} | Senior Software Engineer - Java | Aug 2024 - Present
-\begin{itemize}
-    \item Designed and implemented scalable distributed systems handling high throughput (60k RPS) and low latency using Virtual Threading in Java 21.
-    \item Developed and maintained microservices-based architectures leveraging Spring Boot, AWS EC2 Graviton, and AWS services for fault-tolerant, cost-efficient distributed deployments.
-    \item Designed distributed caching mechanisms using Amazon ElastiCache to improve performance, reduce database load, and increase throughput.
-    \item Developed secure APIs with OAuth2, OpenID Connect, and JOSE authentication/authorization strategies using Spring Security and Spring Authorization Server.
-    \item Implemented Fully Homomorphic Encryption (FHE) through OpenFHE to securely process biomedical data without exposing users' PII.
-    \item Optimized API response times by implementing lazy loading and efficient data serialization techniques (e.g., Jackson), improving performance under high load.
-    \item Developed an extensive test suite covering unit, integration, and end-to-end tests, leveraging Dev Containers for consistent development and testing environments.
-    \item Created an upskilling program for mid and junior engineers, enabling them to design, develop, and deploy scalable Java Spring Boot applications in Kubernetes while maintaining observability and testing best practices.
-\end{itemize}
+%----------------------------------------------------------------------------------------
+%	Summary
+%----------------------------------------------------------------------------------------
 
-\textbf{Upwork} | Senior Software Engineer - DevSecOps / Python | May 2024 - Oct 2024
-\begin{itemize}
-    \item Led security improvements by enforcing NIST and OWASP guidelines.
-    \item Automated VM upgrades using Ansible, reducing maintenance tickets by 30%.
-    \item Conducted performance profiling to achieve sub-100ms response times.
-\end{itemize}
+\begin{rSection}{Summary}
+    Software Engineer with 9+ years of experience spanning software development, DevOps, distributed systems, and security. I have worked with large enterprises and startups across multiple geographies. My expertise includes developing high-performance distributed applications, REST APIs, system design, automation, observability, and cloud-native development with Spring Boot and Kubernetes.
+\end{rSection}
 
-\textbf{Kashier} | Senior Software Engineer - DevSecOps / Node.js | Jan 2023 - Jan 2024
-\begin{itemize}
-    \item Participated in the migration from AWS to on-premise.
-    \item Led the design and implementation of multiple pipelines in GitLab, which contained linting, building, container scanning, smoke tests, code coverage, cyclomatic complexity, unit tests, and deployment, resulting in 40\% faster build times.
-    \item Implemented GitOps principles by automating the CI to update Argo CD Helm Charts repo, leading to automated deployments from PR approval to production with quality gates.
-    \item Enabled fully automated deployments within 5 minutes of a developer pushing a build branch, streamlining CI/CD processes.
-    \item Implemented PDB and HPA to dynamically adjust resources based on traffic load, optimizing cost and performance.
-    \item Designed Preview Environments that provision isolated environments for developers, reducing product/QA approval times by 80\%.
-    \item Instrumented Node.js microservices for tracing and logging using ELK, establishing observability processes.
-    \item Automated MongoDB cluster upgrades using Ansible playbooks, ensuring zero downtime migrations.
-    \item Enabled Point-in-Time-Recovery (PITR) for MongoDB to maintain reliable audit trails and data snapshots.
-    \item Created comprehensive documentation outlining the Critical User Journey to accelerate developer onboarding.
-    \item Achieved an SLO of 99.5\% in production and 95\% in staging, implementing DORA metrics:
-    \begin{itemize}
-        \item Deployment Frequency (DF): Multiple times per day.
-        \item Lead Time for Changes (LT): 1 day.
-        \item Change Failure Rate (CFR): 3\%.
-        \item Time to Restore (TTR): Up to 30 minutes.
-    \end{itemize}
-\end{itemize}
+%----------------------------------------------------------------------------------------
+%	Education Section
+%----------------------------------------------------------------------------------------
 
-\textbf{GBM} | Senior Software Engineer - DevSecOps / Java | Jan 2022 - Dec 2022
-\begin{itemize}
-    \item Designed and executed robust disaster recovery plans utilizing AWS services, achieving RTO and RPO targets, reducing MTTR by 80\%.
-    \item Created a centralized repo for config and secrets management for 60+ microservices using Spring Config, automating key rotation and reducing maintenance tickets by 70\%.
-    \item Built resilient APIs with circuit breakers, rate limiting, and fallback mechanisms using Resilience4j and Spring Cloud Gateway.
-    \item Ensured hot reload for 100+ services using Spring Bus and Actuator without k8s downtime.
-    \item Implemented distributed web stress testing (JMeter) with high anonymity to prevent DDoS issues.
-    \item Led cloud migrations (shift and lift) and Java modernization/containerization efforts.
-    \item Deployed multi-cloud OpenShift clusters for high availability and regulatory compliance.
-    \item Designed cloud-based data pipelines for efficient ingestion, processing, and distribution.
-    \item Implemented a Kafka + Kubernetes interface with KEDA for HPA and autoscaling based on Kafka message count.
-    \item Ensured PCI DSS compliance for customers.
-\end{itemize}
+\begin{rSection}{Education}
+    \begin{rESubsection}
+        {MS Computer Science (Ongoing, 2025)}
+        {Ball State University}
+        {2025 \\ Present}
+        [Location] % Optional
+    \end{rESubsection}
 
+    \begin{rESubsection}
+        {MBA}
+        {Arab Academy for Science, Technology and Maritime}
+        {2018 \\ 2020}
+        [Location] % Optional
+    \end{rESubsection}
 
-\textbf{Infor} | Senior Software Engineer - Cloud Consultant / Java | Jan 2020 - Dec 2021
-\begin{itemize}
-    \item Established and refined SLOs and SLIs to enhance reliability and performance.
-    \item Designed Kafka-based event-driven ordering systems, improving response time by 60\%.
-    \item Built a unified aggregation API using Spring Stack and SQS, integrating 40+ 3PLs.
-    \item Upgraded JVMs to GraalVM for memory optimization in air-gapped environments.
-    \item Enabled real-time order tracking using 3PL GPS data and integration APIs.
-    \item Led integration of Infor systems with 300+ POS terminals and built reusable APIs.
-    \item Created onboarding and technical documentation, improving engineer onboarding by 30\%.
-    \item Mentored junior engineers through 1-on-1 sessions and delegated key design tasks.
-\end{itemize}
+    \begin{rESubsection}
+        {B.S. Mechanical Mechatronics & Software Engineering}
+        {British University in Egypt}
+        {2009 \\ 2014}
+        [] % Optional
+    \end{rESubsection}
+\end{rSection}
 
-\textbf{Edraky} | Senior Software Engineer - Cloud Consultant / Java | Jul 2019 - Dec 2019
-\begin{itemize}
-    \item Orchestrated and deployed SAP IBP solutions integrating with Azure services such as Azure Data Lake and Azure SQL, ensuring seamless data flow across systems.
-    \item Assessed customers' infrastructure and provided a digital transformation roadmap to migrate legacy applications to the cloud.
-    \item Led multiple migrations from on-premise systems to Azure, including application containerization and deployment.
-    \item Deployed and maintained multiple Azure Kubernetes Service (AKS) production clusters as an early adopter.
-    \item Designed and implemented backup and recovery solutions for SAP IBP data, defining data transfer frequencies for improved resilience.
-\end{itemize}
+%----------------------------------------------------------------------------------------
+% Skills Section
+%----------------------------------------------------------------------------------------
 
-\textbf{EOH Group} | Senior Software Engineer - Cloud Consultant / Java | Nov 2017 - Jul 2019
-\begin{itemize}
-    \item Deployed event-driven SAP architecture using SNS and SQS.
-    \item Automated AWS infrastructure maintenance with Ansible.
-\end{itemize}
+\begin{rSection}{Skills}
+    \begin{rTable}
+        Programming Languages & Java (Spring Boot), NodeJS, Go, Python, Bash \\
+        Testing & JUnit, Mockito, WireMock \\
+        Authn/Authz & OAuth2, JOSE, JWT, RSA, EC, AES \\
+        Kubernetes & Rancher, K3s, Openshift, EKS, AKS, Kubeadm, ClusterAPI \\
+        Service Mesh & Istio, Cilium \\
+        Cloud & AWS, Azure, Linode, Hetzner, GCP \\
+        Databases & PostgreSQL, AWS Aurora, MySQL, MongoDB, Cassandra, DynamoDB, DocumentDB \\
+        Caching & Redis, Val-key \\
+        Object Storage & Minio, S3 \\
+        Queues & RabbitMQ, Kafka, SQS \\
+        CI/CD & GitLab, GitHub Actions, ArgoCD, FluxCD \\
+        Automation \& IaC & Ansible, Terraform, OpenTofu, Pulumi \\
+        Monitoring & ELK, Grafana, Datadog, Zabbix \\
+        OS & Redhat, Ubuntu, Talos, MacOS \\
+        Source Control & Git, SVN
+    \end{rTable}
+\end{rSection}
 
-\textbf{BUE} | Lab Systems Admin | Sep 2015 - May 2017
-\begin{itemize}
-    \item Managed 35+ hosts and implemented automated backups.
-    \item Developed Java-based scheduling software for lab reservations.
-\end{itemize}
+%----------------------------------------------------------------------------------------
+% Professional Experience
+%----------------------------------------------------------------------------------------
 
-\textbf{Frank Noe} | Systems Admin | Jan 2014 - Aug 2015
-\begin{itemize}
-    \item Implemented automated daily backup and retention policies.
-    \item Achieved 90% system uptime using Zabbix monitoring.
-\end{itemize}
+\begin{rSection}{Experience}
+    \begin{rSubsection}
+        {Senior Software Engineer - Java}
+        {Jendi AI}
+        {Aug 2024 \\ Present}
+        [Location]
+        \begin{rItemize}
+            \item Designed and implemented scalable distributed systems handling high throughput (60k RPS) and low latency using Virtual Threading in Java 21.
+            \item Developed and maintained microservices-based architectures leveraging Spring Boot, AWS EC2 Graviton, and AWS services for fault-tolerant, cost-efficient distributed deployments.
+            \item Designed distributed caching mechanisms using Amazon ElastiCache to improve performance, reduce database load, and increase throughput.
+            \item Developed secure APIs with OAuth2, OpenID Connect, and JOSE authentication/authorization strategies using Spring Security and Spring Authorization Server.
+            \item Implemented Fully Homomorphic Encryption (FHE) through OpenFHE to securely process biomedical data without exposing users' PII.
+            \item Optimized API response times by implementing lazy loading and efficient data serialization techniques (e.g., Jackson), improving performance under high load.
+            \item Developed an extensive test suite covering unit, integration, and end-to-end tests, leveraging Dev Containers for consistent development and testing environments.
+            \item Created an upskilling program for mid and junior engineers, enabling them to design, develop, and deploy scalable Java Spring Boot applications in Kubernetes while maintaining observability and testing best practices.
+        \end{rItemize}
+    \end{rSubsection}
 
-\section*{Skills}
-\textbf{Programming Languages:} Java (Spring Boot), NodeJS, Go, Python, Bash\\
-\textbf{Testing:} JUnit, Mockito, WireMock\\
-\textbf{Authn/Authz:} OAuth2, JOSE, JWT, RSA, EC, AES\\
-\textbf{Kubernetes:} Rancher, K3s, Openshift, EKS, AKS, Kubeadm, ClusterAPI\\
-\textbf{Service Mesh:} Istio, Cilium\\
-\textbf{Cloud:} AWS, Azure, Linode, Hetzner, GCP\\
-\textbf{Databases:} PostgreSQL, AWS Aurora, MySQL, MongoDB, Cassandra, DynamoDB, DocumentDB\\
-\textbf{Caching:} Redis, Val-key\\
-\textbf{Object Storage:} Minio, S3\\
-\textbf{Queues:} RabbitMQ, Kafka, SQS\\
-\textbf{CI/CD:} GitLab, GitHub Actions, ArgoCD, FluxCD\\
-\textbf{Automation \\& IaC:} Ansible, Terraform, OpenTofu, Pulumi\\
-\textbf{Monitoring:} ELK, Grafana, Datadog, Zabbix\\
-\textbf{OS:} Redhat, Ubuntu, Talos, MacOS\\
-\textbf{Source Control:} Git, SVN
+    \begin{rSubsection}
+        {Senior Software Engineer - DevSecOps / Python}
+        {Upwork}
+        {May 2024 \\ Oct 2024}
+        [Location]
+        \begin{rItemize}
+            \item Led security improvements by enforcing NIST and OWASP guidelines.
+            \item Automated VM upgrades using Ansible, reducing maintenance tickets by 30%.
+            \item Conducted performance profiling to achieve sub-100ms response times.
+        \end{rItemize}
+    \end{rSubsection}
 
-\section*{Education}
-\textbf{Ball State University} | MS Computer Science (Ongoing, 2025)\\
-\textbf{Arab Academy for Science, Technology and Maritime} | MBA (2018 - 2020)\\
-\textbf{British University in Egypt} | BSc Mechanical (Mechatronics & Software) Engineering (2009 - 2014)
+    \begin{rSubsection}
+        {Senior Software Engineer - DevSecOps / Node.js}
+        {Kashier}
+        {Jan 2023 \\ Jan 2024}
+        [Location]
+        \begin{rItemize}
+            \item Participated in the migration from AWS to on-premise.
+            \item Led the design and implementation of multiple pipelines in GitLab, which contained linting, building, container scanning, smoke tests, code coverage, cyclomatic complexity, unit tests, and deployment, resulting in 40\% faster build times.
+            \item Implemented GitOps principles by automating the CI to update Argo CD Helm Charts repo, leading to automated deployments from PR approval to production with quality gates.
+            \item Enabled fully automated deployments within 5 minutes of a developer pushing a build branch, streamlining CI/CD processes.
+            \item Implemented PDB and HPA to dynamically adjust resources based on traffic load, optimizing cost and performance.
+            \item Designed Preview Environments that provision isolated environments for developers, reducing product/QA approval times by 80\%.
+            \item Instrumented Node.js microservices for tracing and logging using ELK, establishing observability processes.
+            \item Automated MongoDB cluster upgrades using Ansible playbooks, ensuring zero downtime migrations.
+            \item Enabled Point-in-Time-Recovery (PITR) for MongoDB to maintain reliable audit trails and data snapshots.
+            \item Created comprehensive documentation outlining the Critical User Journey to accelerate developer onboarding.
+            \item Achieved an SLO of 99.5\% in production and 95\% in staging, implementing DORA metrics:
+            \begin{rItemize}
+                \item Deployment Frequency (DF): Multiple times per day.
+                \item Lead Time for Changes (LT): 1 day.
+                \item Change Failure Rate (CFR): 3\%.
+                \item Time to Restore (TTR): Up to 30 minutes.
+            \end{rItemize}
+        \end{rItemize}
+    \end{rSubsection}
 
-\section*{Certifications}
-AWS Certified Solutions Architect – Associate (2023)\\
-Microsoft Certified Azure Administrator Associate (2023)\\
-SAP Certified Associate - Design Thinking (2018)
+    \begin{rSubsection}
+        {Senior Software Engineer - DevSecOps / Java}
+        {GBM}
+        {Jan 2022 \\ Dec 2022}
+        [Location]
+        \begin{rItemize}
+            \item Designed and executed robust disaster recovery plans utilizing AWS services, achieving RTO and RPO targets, reducing MTTR by 80\%.
+            \item Created a centralized repo for config and secrets management for 60+ microservices using Spring Config, automating key rotation and reducing maintenance tickets by 70\%.
+            \item Built resilient APIs with circuit breakers, rate limiting, and fallback mechanisms using Resilience4j and Spring Cloud Gateway.
+            \item Ensured hot reload for 100+ services using Spring Bus and Actuator without k8s downtime.
+            \item Implemented distributed web stress testing (JMeter) with high anonymity to prevent DDoS issues.
+            \item Led cloud migrations (shift and lift) and Java modernization/containerization efforts.
+            \item Deployed multi-cloud OpenShift clusters for high availability and regulatory compliance.
+            \item Designed cloud-based data pipelines for efficient ingestion, processing, and distribution.
+            \item Implemented a Kafka + Kubernetes interface with KEDA for HPA and autoscaling based on Kafka message count.
+            \item Ensured PCI DSS compliance for customers.
+        \end{rItemize}
+    \end{rSubsection}
 
-\section*{Links}
-\href{https://github.com/AndrewSeif}{GitHub: AndrewSeif}\\
-\href{https://andrewseif.github.io/Container-vs-VMs/}{Container vs VMs Article}
+    \begin{rSubsection}
+        {Senior Software Engineer - Cloud Consultant / Java}
+        {Infor}
+        {Jan 2020 \\ Dec 2021}
+        [Location]
+        \begin{rItemize}
+            \item Established and refined SLOs and SLIs to enhance reliability and performance.
+            \item Designed Kafka-based event-driven ordering systems, improving response time by 60\%.
+            \item Built a unified aggregation API using Spring Stack and SQS, integrating 40+ 3PLs.
+            \item Upgraded JVMs to GraalVM for memory optimization in air-gapped environments.
+            \item Enabled real-time order tracking using 3PL GPS data and integration APIs.
+            \item Led integration of Infor systems with 300+ POS terminals and built reusable APIs.
+            \item Created onboarding and technical documentation, improving engineer onboarding by 30\%.
+            \item Mentored junior engineers through 1-on-1 sessions and delegated key design tasks.
+        \end{rItemize}
+    \end{rSubsection}
+
+    \begin{rSubsection}
+        {Senior Software Engineer - Cloud Consultant / Java}
+        {Edraky}
+        {Jul 2019 \\ Dec 2019}
+        [Location]
+        \begin{rItemize}
+            \item Orchestrated and deployed SAP IBP solutions integrating with Azure services such as Azure Data Lake and Azure SQL, ensuring seamless data flow across systems.
+            \item Assessed customers' infrastructure and provided a digital transformation roadmap to migrate legacy applications to the cloud.
+            \item Led multiple migrations from on-premise systems to Azure, including application containerization and deployment.
+            \item Deployed and maintained multiple Azure Kubernetes Service (AKS) production clusters as an early adopter.
+            \item Designed and implemented backup and recovery solutions for SAP IBP data, defining data transfer frequencies for improved resilience.
+        \end{rItemize}
+    \end{rSubsection}
+
+    \begin{rSubsection}
+        {Senior Software Engineer - Cloud Consultant / Java}
+        {EOH Group}
+        {Nov 2017 \\ Jul 2019}
+        [Location]
+        \begin{rItemize}
+            \item Deployed event-driven SAP architecture using SNS and SQS.
+            \item Automated AWS infrastructure maintenance with Ansible.
+        \end{rItemize}
+    \end{rSubsection}
+
+    \begin{rSubsection}
+        {Lab Systems Admin}
+        {BUE}
+        {Sep 2015 \\ May 2017}
+        [Location]
+        \begin{rItemize}
+            \item Managed 35+ hosts and implemented automated backups.
+            \item Developed Java-based scheduling software for lab reservations.
+        \end{rItemize}
+    \end{rSubsection}
+
+    \begin{rSubsection}
+        {Systems Admin}
+        {Frank Noe}
+        {Jan 2014 \\ Aug 2015}
+        [Location]
+        \begin{rItemize}
+            \item Implemented automated daily backup and retention policies.
+            \item Achieved 90\% system uptime using Zabbix monitoring.
+        \end{rItemize}
+    \end{rSubsection}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Certificates Section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Certificates \& Awards}
+    \begin{rOSubsection}
+        {AWS Certified Solutions Architect – Associate}
+        {Little Description}
+        {2023}
+    \end{rOSubsection}
+
+    \begin{rOSubsection}
+        {Microsoft Certified Azure Administrator Associate}
+        {Little Description}
+        {2023}
+    \end{rOSubsection}
+
+    \begin{rOSubsection}
+        {SAP Certified Associate - Design Thinking}
+        {Little Description}
+        {2018}
+    \end{rOSubsection}
+\end{rSection}
 
 \end{document}
